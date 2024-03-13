@@ -1,0 +1,234 @@
+from turtle import *    
+from time import *
+
+#Variables
+
+casillas=[1,2,3,4,5,6,7,8,9]
+
+j1=[]
+j2=[]
+
+s1=[1,2,3]
+
+casillas_usadas=[]
+
+
+
+
+#Interfaz
+
+hideturtle()
+
+penup()
+goto(-100,125)
+write("Tres en Raya", False,"left", ("arial", 20, "bold italic"))
+
+xi=-75
+yi=75
+
+l=0
+while l<4:
+  penup()
+  y=yi-50*l
+  goto(xi,y)
+  pendown()
+  goto(75,y)
+  l=l+1
+
+l=0
+while l<4:
+  penup()
+  x=xi+50*l
+  goto(x,yi)
+  pendown()
+  goto(x,-75)
+  l=l+1
+
+
+a=0
+b=1
+while a<3:
+  y=70-50*a
+  i=0
+  while i<3:
+    penup()
+    x=-70 + 50*i
+    goto(x,y)
+    pendown()
+    write(b, False,"left", ("arial", 12, "bold italic"))
+    i=i+1
+    b=b+1
+  a=a+1
+
+
+#Funciones
+
+turno=1
+while True:
+    if not((turno%2)==0):
+        usuario1=int(input('Dime una casilla'))
+        if 0<usuario1<10:
+            if not(usuario1 in casillas_usadas):
+                if usuario1 == 1:
+                    penup()
+                    goto(-50,50)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 2:
+                    penup()
+                    goto(0,50)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 3:
+                    penup()
+                    goto(50,50)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 3:
+                    penup()
+                    goto(50,50)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 4:
+                    penup()
+                    goto(-50,0)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 5:
+                    penup()
+                    goto(0,0)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 6:
+                    penup()
+                    goto(50,0)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 7:
+                    penup()
+                    goto(-50,-50)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 8:
+                    penup()
+                    goto(0,-50)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                elif usuario1 == 9:
+                    penup()
+                    goto(50,-50)
+                    dot(10, 'red')
+                    j1.append(usuario1)
+                    casillas_usadas.append(usuario1)
+                else:
+                    print('no puede mover ahí')
+                    turno=turno-1
+
+                if (1 in j1) and (2 in j1) and (3 in j1):
+                    penup()
+                    goto(-100,-125)
+                    write("El jugador 1 ha ganado", False,"left", ("arial", 20, "bold italic"))
+                    break
+
+            
+            else:
+                print('No ha respondido una casilla')
+                print('Vuelve a intentarlo')
+                turno=turno-1
+
+    else:
+        usuario2=int(input('Dime una casilla'))
+        if 0<usuario2<10:
+            if not(usuario2 in casillas_usadas):
+                if usuario2 == 1:
+                    penup()
+                    goto(-50,50)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 2:
+                    penup()
+                    goto(0,50)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 3:
+                    penup()
+                    goto(50,50)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 3:
+                    penup()
+                    goto(50,50)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 4:
+                    penup()
+                    goto(-50,0)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 5:
+                    penup()
+                    goto(0,0)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 6:
+                    penup()
+                    goto(50,0)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 7:
+                    penup()
+                    goto(-50,-50)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 8:
+                    penup()
+                    goto(0,-50)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                elif usuario2 == 9:
+                    penup()
+                    goto(50,-50)
+                    dot(10, 'blue')
+                    j2.append(usuario2)
+                    casillas_usadas.append(usuario2)
+                else:
+                    print('no puede mover ahí')
+                    turno=turno-1
+
+                if (7 in j2) and (8 in j2) and (9 in j2):
+                    penup()
+                    goto(-100,-125)
+                    write("El jugador 2 ha ganado", False,"left", ("arial", 20, "bold italic"))
+                    break
+
+            
+            else:
+                print('No ha respondido una casilla')
+                print('Vuelve a intentarlo')
+                turno=turno-1
+
+    if casillas == casillas_usadas:
+        print('Empate')
+        break
+  	 
+    turno=turno+1
+
+sleep(6)
